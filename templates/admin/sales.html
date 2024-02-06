@@ -1,0 +1,26 @@
+{% extends "admin/base.html" %}
+{% block title %}Sales -- Admin{% endblock %}
+{% block navigation %}
+    {{ nav_link('admin_home', 'Inventory') }}
+    {{ nav_link('sales', 'Sales') }}
+    {{ nav_link('sku_search', 'Item Lookup') }}
+    {{ nav_link('users', 'Users') }}
+    {{ nav_link('logout', 'LOGOUT') }}
+{% endblock %}
+{% block page_content %}
+    <!-- this will be our graphy page -->
+    <br><br>
+        <div class="tile is-parent">
+
+        <div class="tile"></div>
+            <div class="tile is-5 box boxbck">
+                <p class="title is-3 ">Sales -- Last 30 Days</p>
+            </div>
+            <div class="tile"></div>
+            <div class="tile is-5 box boxbck2">
+                <p class="title is-3">Sales -- Last 360 Days</p>
+            </div>
+        <div class="tile"></div>
+        </div>
+{% endblock %}
+

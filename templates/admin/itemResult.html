@@ -1,0 +1,29 @@
+{% extends "employee/base.html" %}
+{% block title %}Item Lookup Result{% endblock %}
+{% block navigation %}
+    {{ nav_link('admin_home', 'Inventory') }}
+    {{ nav_link('sales', 'Sales') }}
+    {{ nav_link('sku_search', 'Item Lookup') }}
+    {{ nav_link('users', 'Users') }}
+    {{ nav_link('logout', 'LOGOUT') }}
+{% endblock %}
+
+{% block pos %}
+   <!-- display our DB info about the item -->
+    <h1>Item Details</h1>
+    {% if shoes %}
+        <p>SKU: {{ shoes.SKU }}</p>
+        <p>Shoe Name: {{ shoes.ShoeName }}</p>
+        <p>Brand: {{ shoes.Brand }}</p>
+        <p>Type: {{ shoes.Type }}</p>
+        <p>Gender: {{ shoes.Gender }}</p>
+        <p>Size: {{ shoes.Size }}</p>
+        <p>Price: {{ shoes.Price }}</p>
+        <p>Quantity in Stock: {{ shoes.QuantityInStock }}</p>
+        <p>Sale Category: {{ shoes.SaleCategory }}</p>
+        <p>Color: {{ shoes.Color }}</p>
+    {% else %}
+        <p>Item not found</p>
+    {% endif %}
+{% endblock %}
+

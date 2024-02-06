@@ -1,0 +1,30 @@
+{% from "macros.html" import nav_link with context %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- needed for bulma -->
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> <!-- bulma -->
+    <link href="{{ url_for('static', filename='custom.css') }}" rel="stylesheet"/> <!-- any custom stuff we do -->
+    {% block html_head %}{% endblock %} <!-- anything else from extending html -->
+</head>
+<body>
+<nav class="navbar bckBlue">
+    <div class="navbar-brand">
+      <img class="navbar-item" src="../../static/images/logo.jpeg" width="75" height="85">
+      <p class="navbar-item">GOOD SOLE</p>
+  </div>
+{% block navigation %}
+{% endblock %}
+</nav>
+
+{% block page_content %}
+{% endblock %}
+</body>
+<div class="footer2">
+      <p class="copyright">Copyright ©2024 <br> HackHive TEAM 25</p>
+  </div>
+</html>

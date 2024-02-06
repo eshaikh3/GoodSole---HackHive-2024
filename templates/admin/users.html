@@ -1,0 +1,45 @@
+{% extends "admin/base.html" %}
+{% block title %}Users -- Admin{% endblock %}
+{% block navigation %}
+    {{ nav_link('admin_home', 'Inventory') }}
+    {{ nav_link('sales', 'Sales') }}
+    {{ nav_link('sku_search', 'Item Lookup') }}
+    {{ nav_link('users', 'Users') }}
+    {{ nav_link('logout', 'LOGOUT') }}
+{% endblock %}
+{% block page_content %}
+    <div class="container center">
+        <h3 class="headingcolor"><u>User Management</u></h3>
+        <!-- add username and password -->
+        <div class="addcolor box">
+            <h4 class="adder"><u>ADD A USER</u></h4>
+            <form action="{{ url_for('login') }}" method="post">
+                <label for="username" class="userinput ">Username:</label>
+                <input type="text" id="create_user" name="create_user" class="input">
+                <br>
+                <br>
+                <label class="userinput" for="password">Password:</label>
+                <input type="password" id="create_pass" name="create_pass" class="input">
+                <br>
+                <br>
+                <input id="adminbox" class="adminbox is-medium" type="checkbox">
+                <label for="adminbox">User Admin?</label>
+                <br> <br>
+                <input class="button is-medium" type="submit" value="Create User">
+            </form>
+        </div>
+        <br>
+        <div class="deletecolor box">
+            <h4 class="remover"><u>DELETE A USER</u></h4>
+            <form action="{{ url_for('login') }}" method="post">
+                <label class="userinput" for="username">Username:</label>
+                <input type="text" id="delete_user" name="delete_user" class="input">
+                <br>
+                <br>
+                <input class="button is-medium" type="submit" value="Delete User  ">
+            </form>
+        </div>
+    <br><br>
+    </div>
+
+{% endblock %}
